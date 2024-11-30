@@ -1,2 +1,2 @@
-web: gunicorn webprofile.wsgi --log-file -
+web: gunicorn rumah_sakit.wsgi --log-file -
 release: bash release.sh
