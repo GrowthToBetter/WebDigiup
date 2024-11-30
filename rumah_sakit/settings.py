@@ -94,7 +94,7 @@ TEMPLATES = [
     },
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'web-production-f6483.up.railway.app',
+    'https://web-production-f6483.up.railway.app',
     'http://localhost',
 ]
 
