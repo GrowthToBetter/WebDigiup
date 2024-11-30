@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% block content %}
+<div class="container my-5">
+  <h1 class="text-center fw-bold mb-4">Fasilitas Kami</h1>
+
+  <div id="fasilitasCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for feat in feats %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ feat.fasilitas }}</h5>
+            <p class="card-text">{{ feat.keunggulan }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#fasilitasCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden" style="color:black;">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#fasilitasCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden" style="color:black;">Next</span>
+    </button>
+  </div>
+
+  <h2 class="text-center fw-bold mt-5">Kamar dan Keunggulan</h2>
+  <div class="row">
+    {% for room in rooms %}
+    <div class="col-md-4">
+      <div class="card shadow-sm mb-4">
+        <img src="{{ room.image.url }}" class="card-img-top" alt="{{ room.name }}">
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ room.name }}</h5>
+          <p class="card-text">{{ room.fasilitas_kamar }}</p>
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#roomModal{{ room.id }}">
+            Detail Kamar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="roomModal{{ room.id }}"
+      tabindex="-1"
+      aria-labelledby="roomModalLabel{{ room.id }}"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="roomModalLabel{{ room.id }}">{{ room.name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="{{ room.image.url }}" class="img-fluid rounded" alt="{{ room.name }}">
+              </div>
+              <div class="col-md-6">
+                <h6>Fasilitas:</h6>
+                <p>{{ room.fasilitas_kamar }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

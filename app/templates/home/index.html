@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome, {{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <h1>About our Profil Company</h1>
+    <dir class="container-fluid">
+      Visi Menjadi rumah sakit terkemuka dalam layanan kesehatan spesialis
+      jantung dan saraf yang terpercaya dengan berbasis teknologi modern.
+
+      <h1>Misi</h1>
+      <ul>
+        <li>
+          1. Memberikan pelayanan kesehatan berkualitas tinggi yang berpusat
+          pada kebutuhan pasien.
+        </li>
+        <li>
+          2. Mengembangkan teknologi medis terkini untuk mendukung diagnosa dan
+          perawatan.
+        </li>
+        <li>
+          3. Menyediakan tenaga medis dan paramedis profesional serta
+          berpengalaman.
+        </li>
+        <li>
+          4. Membangun lingkungan yang nyaman dan aman bagi pasien dan keluarga.
+        </li>
+      </ul>
+      <h1>Layanan Unggulan</h1>
+
+      <ol>
+        <li>1. Spesialis Jantung:</li>
+        <ul>
+          <li>o Layanan kateterisasi jantung (Cath Lab).</li>
+          <li>o Pemeriksaan dan perawatan penyakit jantung koroner.</li>
+          <li>o Rehabilitasi jantung pascaoperasi.</li>
+        </ul>
+      </ol>
+      <ol>
+        <li>2. Spesialis Saraf:</li>
+        <ul>
+          <li>o Diagnosa dan pengobatan stroke.</li>
+          <li>
+            o Layanan neurologi komprehensif, termasuk rehabilitasi saraf.
+          </li>
+          <li>
+            o Penanganan penyakit neurodegeneratif seperti Parkinson dan
+            Alzheimer.
+          </li>
+        </ul>
+      </ol>
+      <br>
+      <hr>
+
+      “Kesehatan Anda, Prioritas Kami.” Dengan dedikasi selama 10 tahun dalam
+      memberikan layanan kesehatan, Rumah Sakit Sejahtera terus berkomitmen
+      untuk menjadi pilihan utama dalam layanan spesialis jantung dan saraf.
+    </dir>
+{% endblock content %}
