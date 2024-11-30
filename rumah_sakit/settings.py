@@ -34,7 +34,7 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = 'django-insecure-gv&e402sdm&v@7#xz3x@b7qs)m0b4@7_#ik$270_-35jeokcg('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -93,9 +93,13 @@ TEMPLATES = [
         },
     },
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'web-production-f6483.up.railway.app',
+    'http://localhost',
+]
 
 WSGI_APPLICATION = 'rumah_sakit.wsgi.application'
-
+ALLOWED_HOSTS = ['web-production-f6483.up.railway.app','localhost']
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
